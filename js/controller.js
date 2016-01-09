@@ -1,4 +1,4 @@
-define(['js/app', 'backbone', 'marionette', 'js/views/menua/MenuaView', 'js/views/egutegia/EgutegiaView', 'js/views/albisteak/AlbisteakView', 'js/views/argazkiak/ArgazkiakView'],
+define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView'],
     function (App, Backbone, Marionette, MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView) {
     return Backbone.Marionette.Controller.extend({
         initialize:function (options) {

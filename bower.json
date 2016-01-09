@@ -1,0 +1,26 @@
+{
+  "name": "kitchen",
+  "homepage": "https://github.com/corand/kitchen",
+  "authors": [
+    "Andoni <andoni.correas@gmail.com>"
+  ],
+  "description": "kitchen display calendar",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.marionette": "~2.4.4",
+    "bootstrap": "~3.3.6",
+    "fullcalendar": "~2.6.0",
+    "handlebars": "~4.0.5",
+    "requirejs": "~2.1.22",
+    "text": "~2.0.14"
+  }
+}
