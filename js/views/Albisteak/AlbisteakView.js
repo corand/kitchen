@@ -5,6 +5,11 @@ define( [ 'js/app', 'marionette', 'handlebars', 'text!js/views/Albisteak/albiste
             //Template HTML string
             template: Handlebars.compile(template),
 
+            hide: function(){
+                $(".albiste").removeClass("fadeInLeft");
+                $(".albiste").addClass("fadeOutUp");
+            },
+
             // View Event Handlers
             events: {
 

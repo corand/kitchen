@@ -1,8 +1,8 @@
-define(["jquery","backbone","js/views/Argazkiak/ArgazkiModel"],
-  function($, Backbone, Argazki) {
-    var ArgazkiCollection = Backbone.Collection.extend({
-		url: "js/views/Argazkiak/argazkiak.json",
-		model: Argazki,
+define(["jquery","backbone","js/views/Albisteak/AlbisteModel"],
+  function($, Backbone, Albiste) {
+    var AlbisteCollection = Backbone.Collection.extend({
+		url: "js/views/Albisteak/albisteak.json",
+		model: Albiste,
 
 		initialize:function (){
 			this.reset(this.shuffle(), { silent:true });
@@ -22,7 +22,9 @@ define(["jquery","backbone","js/views/Argazkiak/ArgazkiModel"],
 			}
 			return current;
 		}
-	});
 
-    return ArgazkiCollection;
+    });
+
+    return AlbisteCollection;
+  
   });

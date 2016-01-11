@@ -5,6 +5,11 @@ define( [ 'js/app', 'marionette', 'handlebars', 'text!js/views/Argazkiak/argazki
             //Template HTML string
             template: Handlebars.compile(template),
 
+            hide: function(){
+                $(".argazki").removeClass("fadeIn");
+                $(".argazki").addClass("fadeOut");
+            },
+
 
             // View Event Handlers
             events: {
