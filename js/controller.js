@@ -51,25 +51,27 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
             $("#argazkiak").addClass("active");
             var argazki_collection,
                 argazki_view;
-                argazki_collection = new ArgazkiCollection();
-                argazki_collection.fetch({
-                    reset: true,                
-                    success: function(){
-                        argazki_collection.initialize();
-                        argazki_view = new ArgazkiakView({ model: argazki_collection.getElement() });
-                        App.mainRegion.show(argazki_view);
-                    },
-                    error: function(){
-                        alert("Errorea argazkien informazioa kargatzerakoan");
-                    }
-                });
-                this.argazki_carousel = setInterval(function(){
-                    argazki_view.hide();
-                    this.effectTimeout = setTimeout(function(){
-                        argazki_view = new ArgazkiakView({ model: argazki_collection.getElement() });
-                        App.mainRegion.show(argazki_view);
-                    },800);
-                },20000);
+
+            argazki_collection = new ArgazkiCollection();
+            argazki_collection.fetch({
+                reset: true,                
+                success: function(){
+                    argazki_collection.initialize();
+                    argazki_view = new ArgazkiakView({ model: argazki_collection.getElement() });
+                    App.mainRegion.show(argazki_view);
+                },
+                error: function(){
+                    alert("Errorea argazkien informazioa kargatzerakoan");
+                }
+            });
+            this.argazki_carousel = setInterval(function(){
+                argazki_view.hide();
+                this.effectTimeout = setTimeout(function(){
+                    argazki_view = new ArgazkiakView({ model: argazki_collection.getElement() });
+                    App.mainRegion.show(argazki_view);
+                },800);
+            },20000);
+            
         }
     });
 });
