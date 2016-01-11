@@ -40,7 +40,7 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
                     App.mainRegion.show(new ArgazkiakView({
                         model: argazki_collection.at(i)
                     }));
-                },5000);
+                },20000);
         }
     });
 });

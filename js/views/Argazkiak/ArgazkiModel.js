@@ -11,7 +11,8 @@ define(["jquery", "backbone"],
             // Default values for all of the Model attributes
             defaults: {
                 "izena": "",
-                "deskribapena": ""
+                "deskribapena": "",
+                "timestamp": Date.now()
             },
 
             // Get's called automatically by Backbone when the set and/or save methods are called (Add your own logic)
