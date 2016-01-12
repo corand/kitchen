@@ -1,3 +1,13 @@
+/*
+.container-fluid { 
+  background: url(../js/views/Argazkiak/img/three.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:750px;
+}
+*/
 #nagusia{ min-height:650px;}
 .ordua{ font-size: 10em; text-align: center; margin-bottom: 0; padding:0; }
 #calendar{ padding-top:10px; }
@@ -8,5 +18,8 @@
 .albiste img{ max-width:33%; float:left;}
 .albiste .deskribapena{ float: left; margin-left:20px; width:50%; font-size:1.5em;}
 .albiste .iturria{ text-align: center; font-size:0.8em; }
+
+.blackscreen{ position: absolute; width:100%; height: 100%; background-color: black; z-index: 98; }
+.inaktibo{ position: absolute; width: 100%; height:100%; background-color: black; z-index:99; }
 
 .clearfix{ clear: both; }

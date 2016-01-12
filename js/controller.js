@@ -1,17 +1,19 @@
-define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView', 'js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
-    function (App, Backbone, Marionette, MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,ArgazkiCollection, AlbisteCollection) {
+define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
+    function (App, Backbone, Marionette, MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
     return Backbone.Marionette.Controller.extend({
+
         initialize:function (options) {
-            //App.headerRegion.show(new HeaderView());
             App.sidebarRegion.show(new MenuaView());
         },
+
         clear: function(){
             clearTimeout(this.effectTimeout);
             clearTimeout(this.argazki_carousel);
             clearTimeout(this.albiste_carousel);
+            App.inaktibo.reset();
             $(".nav-pills li").removeClass("active");
         },
-        //gets mapped to in AppRouter's appRoutes
+
         egutegia:function () {
             this.clear();
             $("#egutegia").addClass("active");
@@ -71,7 +73,33 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
                     App.mainRegion.show(argazki_view);
                 },800);
             },20000);
-            
+
+        },
+
+        inaktibo: function(){
+            this.clear();
+            var argazki_collection,
+                inaktibo_view;
+
+            argazki_collection = new ArgazkiCollection();
+            argazki_collection.fetch({
+                reset: true,                
+                success: function(){
+                    argazki_collection.initialize();
+                    inaktibo_view = new InaktiboView({ model: argazki_collection.getElement() });
+                    App.inaktibo.show(inaktibo_view);
+                },
+                error: function(){
+                    alert("Errorea argazkien informazioa kargatzerakoan");
+                }
+            });
+            this.argazki_carousel = setInterval(function(){
+                inaktibo_view.hide();
+                this.effectTimeout = setTimeout(function(){
+                    inaktibo_view = new InaktiboView({ model: argazki_collection.getElement() });
+                    App.inaktibo.show(inaktibo_view);
+                },800);
+            },20000);
         }
     });
 });

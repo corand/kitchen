@@ -4,7 +4,8 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars'],
 
         App.addRegions({
             mainRegion: "#nagusia",
-            sidebarRegion: "#menua"
+            sidebarRegion: "#menua",
+            inaktibo: "#inaktibo"
         });
 
 
