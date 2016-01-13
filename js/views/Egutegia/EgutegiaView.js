@@ -7,7 +7,7 @@ define( [ 'js/app', 'marionette', 'handlebars', 'jquery', 'fullcalendar', 'text!
 
             onDomRefresh: function(){
                 $('#calendar').fullCalendar({
-
+                    events: 'http://localhost:8080/egutegia'
                 });
             },
 
