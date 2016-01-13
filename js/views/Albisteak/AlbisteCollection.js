@@ -1,7 +1,7 @@
 define(["jquery","backbone","js/views/Albisteak/AlbisteModel"],
   function($, Backbone, Albiste) {
     var AlbisteCollection = Backbone.Collection.extend({
-		url: "js/views/Albisteak/albisteak.json",
+		url: "http://localhost:8080/albisteak",
 		model: Albiste,
 
 		initialize:function (){

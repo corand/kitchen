@@ -3,7 +3,20 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
     return Backbone.Marionette.Controller.extend({
 
         initialize:function (options) {
+            var that = this;
             App.sidebarRegion.show(new MenuaView());
+            this.albiste_collection = new AlbisteCollection();
+
+            this.albiste_collection.fetch({
+                reset: true,                
+                success: function(){
+                    that.albiste_collection.initialize();
+                },
+                error: function(){
+                    alert("Errorea albisteen informazioa kargatzerakoan");
+                }
+            });
+
         },
 
         clear: function(){
@@ -22,27 +35,18 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
 
         albisteak: function() {
             this.clear();
+            var that = this;
             $("#albisteak").addClass("active");
             var albiste_collection,
                 albiste_view;
 
-            albiste_collection = new AlbisteCollection();
-            albiste_collection.fetch({
-                reset: true,                
-                success: function(){
-                    albiste_collection.initialize();
-                    albiste_view = new AlbisteakView({ model: albiste_collection.getElement() });
-                    App.mainRegion.show(albiste_view);
-                },
-                error: function(){
-                    alert("Errorea albisteen informazioa kargatzerakoan");
-                }
-            });
+            albiste_view = new AlbisteakView({ model: this.albiste_collection.getElement() });
+            App.mainRegion.show(albiste_view);
             
             this.albiste_carousel = setInterval(function(){
                 albiste_view.hide();
                 this.effectTimeout = setTimeout(function(){
-                    albiste_view = new AlbisteakView({ model: albiste_collection.getElement() });
+                    albiste_view = new AlbisteakView({ model: that.albiste_collection.getElement() });
                     App.mainRegion.show(albiste_view);
                 },800);
             },20000);

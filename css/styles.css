@@ -16,10 +16,13 @@
 .argazki img{ max-width:100%; }
 
 .albiste img{ max-width:33%; float:left;}
-.albiste .deskribapena{ float: left; margin-left:20px; width:50%; font-size:1.5em;}
+.albiste .deskribapena{ float: left; margin-left:20px; width:50%; font-size:1.3em;}
 .albiste .iturria{ text-align: center; font-size:0.8em; }
 
 .blackscreen{ position: absolute; width:100%; height: 100%; background-color: black; z-index: 98; }
 .inaktibo{ position: absolute; width: 100%; height:100%; background-color: black; z-index:99; }
+
+.erloju-wrapper { position: absolute; top:50px; right:50px; background-color: black; opacity:0.5; padding: 10px; z-index:100;}
+.erloju-osoa { font-size: 12em; color: white;}
 
 .clearfix{ clear: both; }
