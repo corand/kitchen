@@ -11,6 +11,7 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
                 reset: true,                
                 success: function(){
                     that.albiste_collection.initialize();
+                    console.log(that.albiste_collection);
                 },
                 error: function(){
                     alert("Errorea albisteen informazioa kargatzerakoan");
