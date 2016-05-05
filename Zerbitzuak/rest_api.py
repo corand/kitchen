@@ -33,7 +33,7 @@ class albiste_zerrenda:
         web.header('Access-Control-Allow-Origin','*')
         web.header('Access-Control-Allow-Credentials', 'true')
         # 20minutos atariko albisteak
-        d = feedparser.parse('http://20minutos.feedsportal.com/c/32489/f/478284/index.rss')
+        d = feedparser.parse('http://www.20minutos.es/rss/')
         for post in d.entries:
             objektua = {}
             objektua["titularra"] = post["title"].encode('utf-8')
