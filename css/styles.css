@@ -14,11 +14,13 @@ body{ background-color: #C2C2AE;}
 #calendar{ padding-top:10px; }
 
 .argazki{ width:100%; margin-top:20px; text-align: center; }
-.argazki img{ max-width:100%; }
 
-.albiste img{ max-width:33%; float:left;}
-.albiste .deskribapena{ float: left; margin-left:20px; width:50%; font-size:1.3em;}
+.albiste img{ max-width:100%; }
+
+.albiste .desktibapena{ font-size:1.5em; }
+
 .albiste .iturria{ text-align: center; font-size:0.8em; }
+.albiste h1{ font-family: 'Boogaloo', cursive; font-size:50px; margin-bottom:20px; }
 
 .blackscreen{ position: absolute; width:100%; height: 100%; background-color: black; z-index: 98; }
 .inaktibo{ position: absolute; width: 100%; height:100%; background-color: black; z-index:99; }

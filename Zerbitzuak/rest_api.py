@@ -40,7 +40,7 @@ class albiste_zerrenda:
             soup = BeautifulSoup(post["description"].encode('utf-8'), "html.parser")
             objektua["argazkia"] = soup.find('img')['src']
             img = re.compile(r'<img.*?/>')
-            deskribapena = img.sub('', post["description"].encode('utf-8')[:800])
+            deskribapena = img.sub('', post["description"].encode('utf-8')[:400])
             objektua["deskribapena"] = deskribapena + " ..."
             objektua["iturria"] = "20minutos.es"
             data.append(objektua)
