@@ -10,7 +10,7 @@
 */
 body{ background-color: #C2C2AE;}
 #nagusia{ min-height:650px;}
-.ordua{ font-size: 14em; text-align: center; margin-bottom: 0; padding:0; font-family: 'Sirin Stencil', cursive; }
+.ordua{ font-size: 14em; text-align: center; margin-bottom: 0; padding:0; font-family: 'Sirin Stencil', cursive; color: white; }
 #calendar{ padding-top:10px; }
 
 .argazki{ width:100%; margin-top:20px; text-align: center; }
@@ -34,7 +34,7 @@ body{ background-color: #C2C2AE;}
 
 a { color: #fff; text-decoration: none; }
 
-#menua{ position: absolute; top:0; right:0; height: 600px; background-color: #8F8F81; }
+#menua{ position: absolute; top:0; right:0; height: 735px; background-color: #8F8F81; }
 
 #menua .nav-pills a{ font-family: 'Courgette', cursive; font-size: 1.5em;}
 
