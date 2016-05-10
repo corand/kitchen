@@ -1,10 +1,13 @@
-define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
-    function (App, Backbone, Marionette, MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
+define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
+    function (App, Backbone, Marionette,Menu ,MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
     return Backbone.Marionette.Controller.extend({
 
         initialize:function (options) {
             var that = this;
-            App.sidebarRegion.show(new MenuaView());
+            this.menu = new Menu();
+            console.log(this.menu);
+            var menua = new MenuaView({model: this.menu });
+            App.sidebarRegion.show(menua);
             this.albiste_collection = new AlbisteCollection();
 
             this.albiste_collection.fetch({
@@ -25,19 +28,18 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
             clearTimeout(this.argazki_carousel);
             clearTimeout(this.albiste_carousel);
             App.inaktibo.reset();
-            $(".nav-pills li").removeClass("active");
         },
 
         egutegia:function () {
             this.clear();
-            $("#egutegia").addClass("active");
+            this.menu.set("aktibo","egutegia");
             App.mainRegion.show(new EgutegiaView());
         },
 
         albisteak: function() {
             this.clear();
             var that = this;
-            $("#albisteak").addClass("active");
+            this.menu.set("aktibo","albisteak");
             var albiste_collection,
                 albiste_view;
 
@@ -55,7 +57,7 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaView', 'js/view
 
         argazkiak: function() {
             this.clear();
-            $("#argazkiak").addClass("active");
+            this.menu.set("aktibo","argazkiak");
             var argazki_collection,
                 argazki_view;
 

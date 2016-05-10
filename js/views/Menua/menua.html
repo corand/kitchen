@@ -1,17 +1,36 @@
-<div class="ordua">09:04</div>
+<div class="ordua">{{orduak}}:{{minutuak}}</div>
 <!-- Menua -->
 <div class="row">
   <div class="col-md-12">
     <ul class="nav nav-pills nav-justified">
-      <li id="egutegia"><a href="#egutegia">Egutegia</a></li>
-      <li id="albisteak"><a href="#albisteak">Albisteak</a></li>
-      <li id="argazkiak"><a href="#argazkiak">Argazkiak</a></li>
+        {{#if egutegia}}
+          <li id="egutegia" class="active"><a href="#egutegia">Egutegia</a></li>
+        {{else}}
+          <li id="egutegia"><a href="#egutegia">Egutegia</a></li>
+        {{/if}}
+
+        {{#if albisteak}}
+          <li id="albisteak" class="active"><a href="#albisteak">Albisteak</a></li>
+        {{else}}
+           <li id="albisteak"><a href="#albisteak">Albisteak</a></li>
+        {{/if}}
+
+        {{#if argazkiak}}
+          <li id="argazkiak" class="active"><a href="#argazkiak">Argazkiak</a></li>
+        {{else}}
+           <li id="argazkiak"><a href="#argazkiak">Argazkiak</a></li>
+        {{/if}}        
+      
+     
+      
     </ul>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12 eguraldia">
-  	<h3>Eguraldia</h3>
+  	<ul class="nav nav-pills nav-justified">
+      <li id="fullscreen"><a href="#inaktibo">Fullscreen</a></li>
+    </ul>
   </div>
 </div>
