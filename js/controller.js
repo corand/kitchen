@@ -1,5 +1,5 @@
-define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
-    function (App, Backbone, Marionette,Menu ,MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
+define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView','js/views/Erosketak/ErosketakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
+    function (App, Backbone, Marionette,Menu ,MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,ErosketakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
     return Backbone.Marionette.Controller.extend({
 
         initialize:function (options) {
@@ -81,6 +81,12 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/vie
                 },800);
             },20000);
 
+        },
+
+        erosketak: function(){
+            this.clear();
+            this.menu.set("aktibo", "erosketak");
+            App.mainRegion.show(new ErosketakView());
         },
 
         inaktibo: function(){

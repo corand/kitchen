@@ -6,6 +6,7 @@ define(['marionette', 'js/controller'], function(Marionette, Controller) {
            "egutegia": "egutegia",
            "albisteak": "albisteak",
            "argazkiak": "argazkiak",
+           "erosketak": "erosketak",
            "inaktibo": "inaktibo"
        }
    });

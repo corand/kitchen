@@ -7,17 +7,26 @@
   background-size: cover;
   height:750px;
 }
+
+*{ cursor: none!important;}
 */
-body{ background-color: #C2C2AE;}
+body{ background-color: #fcfcdd; }
+h2{ font-size: 60px; }
 #nagusia{ min-height:650px;}
-.ordua{ font-size: 14em; text-align: center; margin-bottom: 0; padding:0; font-family: 'Sirin Stencil', cursive; color: white; }
+.ordua{ font-size: 160px; text-align: center; margin-bottom: 0; padding:0; font-family: 'Sirin Stencil', cursive; color: white; }
 #calendar{ padding-top:10px; }
+
+.fc .fc-button-group > * {
+    float: left;
+    margin: 0 0 0 -1px;
+    padding:30px;
+}
 
 .argazki{ width:100%; margin-top:20px; text-align: center; }
 
 .albiste img{ max-width:100%; }
 
-.albiste .desktibapena{ font-size:1.5em; }
+.albiste .deskribapena{ font-size:18px; margin-top:20px;}
 
 .albiste .iturria{ text-align: center; font-size:0.8em; }
 .albiste h1{ font-family: 'Boogaloo', cursive; font-size:50px; margin-bottom:20px; }
@@ -35,8 +44,13 @@ body{ background-color: #C2C2AE;}
 }
 
 a { color: #fff; text-decoration: none; }
+img{max-width: 100%;}
 
-#menua{ position: absolute; top:0; right:0; height: 735px; background-color: #8F8F81; }
+.fc button .fc-icon {
+    top: -0.8em;
+}
+
+#menua{ position: absolute; top:0; right:0; height: 735px; background-color: #3d3d1e; }
 
 #menua .nav-pills a{ font-family: 'Courgette', cursive; font-size: 1.5em;}
 

@@ -11,6 +11,7 @@ require.config({
         "marionette":"bower_components/backbone.marionette/lib/backbone.marionette.min",
         "handlebars":"bower_components/handlebars/handlebars.min",
         "fullcalendar": "bower_components/fullcalendar/dist/fullcalendar.min",
+        "fullcalendar_es": "bower_components/fullcalendar/dist/lang/es",
         "moment": "bower_components/moment/min/moment.min",
         "text":"bower_components/text/text"
     },
@@ -32,6 +33,10 @@ require.config({
         "fullcalendar": {
             "deps": ["jquery", "moment"],
             "exports": "Fullcalendar"
+        },
+        "fullcalendar_es": {
+            "deps": ["fullcalendar"],
+            "exports": "FullcalendarES"
         }
     }
 });

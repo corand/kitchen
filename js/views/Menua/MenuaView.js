@@ -14,16 +14,18 @@ define( [ 'js/app', 'marionette', 'handlebars', 'moment' ,'text!js/views/Menua/m
                 var albisteak = false;
                 var argazkiak = false;
                 var egutegia = false;
+                var erosketak = false;
 
                 if (orduak.length === 1) orudak = "0"+String(orduak);
                 if (minutuak.length === 1) minutuak = "0"+String(minutuak);
                 if (aktibo === "albisteak") albisteak = true;
                 if (aktibo === "argazkiak") argazkiak = true;
                 if (aktibo === "egutegia") egutegia = true;
+                if (aktibo === "erosketak") erosketak = true;
 
                 
     
-                var time = {"orduak": orduak, "minutuak": minutuak, "albisteak": albisteak, "argazkiak":argazkiak, "egutegia": egutegia  };
+                var time = {"orduak": orduak, "minutuak": minutuak, "albisteak": albisteak, "argazkiak":argazkiak, "egutegia": egutegia, "erosketak": erosketak  };
                 _.extend(helperParams, time);
 
                 return helperParams; 
