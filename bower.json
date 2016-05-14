@@ -21,6 +21,9 @@
     "fullcalendar": "~2.6.0",
     "handlebars": "~4.0.5",
     "requirejs": "~2.1.22",
-    "text": "~2.0.14"
+    "text": "~2.0.14",
+    "font-awesome": "fontawesome#~4.6.3",
+    "jquery-ui": "~1.11.4",
+    "jquery-ui-touch-punch": "*"
   }
 }

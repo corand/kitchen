@@ -10,6 +10,8 @@ require.config({
         "backbone":"bower_components/backbone/backbone-min",
         "marionette":"bower_components/backbone.marionette/lib/backbone.marionette.min",
         "handlebars":"bower_components/handlebars/handlebars.min",
+        "jqueryui": "bower_components/jquery-ui/jquery-ui.min",
+        "jqueryuitouch": "bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min",
         "fullcalendar": "bower_components/fullcalendar/dist/fullcalendar.min",
         "fullcalendar_es": "bower_components/fullcalendar/dist/lang/es",
         "moment": "bower_components/moment/min/moment.min",
@@ -29,6 +31,14 @@ require.config({
         },
         "handlebars":{
             "exports":"Handlebars"
+        },
+        "jqueryui": {
+            "deps": ["jquery"],
+            "exports": "jqueryUi"
+        },
+        "jqueryuitouch":{
+            "deps": ["jquery","jqueryui"],
+            "exports": ["jqueryUiTouch"]
         },
         "fullcalendar": {
             "deps": ["jquery", "moment"],

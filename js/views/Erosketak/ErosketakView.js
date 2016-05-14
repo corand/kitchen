@@ -1,5 +1,5 @@
-define( [ 'js/app', 'marionette', 'handlebars', 'text!js/views/Erosketak/erosketak.html'],
-    function( App, Marionette, Handlebars, template) {
+define( [ 'js/app', 'marionette', 'handlebars','jqueryuitouch', 'text!js/views/Erosketak/erosketak.html'],
+    function( App, Marionette, Handlebars,jqueryuitouch, template) {
         //ItemView provides some default rendering logic
         return Marionette.ItemView.extend( {
             //Template HTML string
@@ -8,6 +8,16 @@ define( [ 'js/app', 'marionette', 'handlebars', 'text!js/views/Erosketak/erosket
             hide: function(){
                 $(".albiste").removeClass("fadeInLeft");
                 $(".albiste").addClass("fadeOutUp");
+            },
+
+            onDomRefresh: function(){
+                $(".produktu").draggable();
+                $( "#otzara" ).droppable({
+                    drop: function( event, ui ) {
+                        $( this )
+                            .addClass( "ui-state-highlight" );
+                    }
+                });
             },
 
             // View Event Handlers

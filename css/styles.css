@@ -38,6 +38,13 @@ h2{ font-size: 60px; }
 .erloju-osoa { font-size: 12em; color: white;font-family: 'Sirin Stencil', cursive;}
 .eguraldia { margin-top: 20px; }
 
+.otzara{ height: 650px; background-color: white; border:1px solid black; margin-top: 20px; padding:5px;}
+.otzara.ui-state-highlight{ background-color: green; color:white;}
+
+.produktuak{ margin-top: 20px; padding:5px; background-color: white; height:650px;}
+.produktu{ height: 150px; padding:5px; text-align:center; border: 1px solid grey; margin: 2px; z-index:10;}
+
+
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
     color: #000;
     background-color: #F5F57A;
