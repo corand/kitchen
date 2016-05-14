@@ -7,7 +7,7 @@ define( [ 'js/app', 'marionette', 'handlebars', 'text!js/views/Albisteak/albiste
 
             hide: function(){
                 $(".albiste").removeClass("fadeInLeft");
-                $(".albiste").addClass("fadeOutUp");
+                $(".albiste").addClass("fadeOut");
             },
 
             // View Event Handlers
