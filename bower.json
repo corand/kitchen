@@ -24,6 +24,10 @@
     "text": "~2.0.14",
     "font-awesome": "fontawesome#~4.6.3",
     "jquery-ui": "~1.11.4",
-    "jquery-ui-touch-punch": "*"
+    "jquery-ui-touch-punch": "*",
+    "firebase": "~2.4.2",
+    "firebase-util": "~0.2.5",
+    "backbonefire": "~0.5.1",
+    "underscore": "~1.8.3"
   }
 }

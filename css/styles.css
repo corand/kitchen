@@ -39,7 +39,8 @@ h2{ font-size: 60px; }
 .eguraldia { margin-top: 20px; }
 
 .otzara{ height: 650px; background-color: white; border:1px solid black; margin-top: 20px; padding:5px;}
-.otzara.ui-state-highlight{ background-color: green; color:white;}
+.ontzia { height:150px; margin: 5px; padding: 5px; border:1px solid grey;}
+.ontzia.ui-state-highlight{ background-color: green; color:white;}
 
 .produktuak{ margin-top: 20px; padding:5px; background-color: white; height:650px;}
 .produktu{ height: 150px; padding:5px; text-align:center; border: 1px solid grey; margin: 2px; z-index:10;}

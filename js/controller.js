@@ -1,5 +1,5 @@
-define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakView','js/views/Erosketak/ErosketakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
-    function (App, Backbone, Marionette,Menu ,MenuaView, EgutegiaView, AlbisteakView, ArgazkiakView,ErosketakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
+define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/views/Menua/MenuaView', 'js/views/Egutegia/EgutegiaView', 'js/views/Albisteak/AlbisteakView', 'js/views/Argazkiak/ArgazkiakCollectionView','js/views/Erosketak/ErosketakView', 'js/views/Inaktibo/InaktiboView','js/views/Argazkiak/ArgazkiCollection', 'js/views/Albisteak/AlbisteCollection'],
+    function (App, Backbone, Marionette,Menu ,MenuaView, EgutegiaView, AlbisteakView, ArgazkiakCollectionView,ErosketakView,InaktiboView, ArgazkiCollection, AlbisteCollection) {
     return Backbone.Marionette.Controller.extend({
 
         initialize:function (options) {
@@ -61,18 +61,29 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/vie
             var argazki_collection,
                 argazki_view;
 
-            argazki_collection = new ArgazkiCollection();
+            argazki_collection = new ArgazkiCollection({ async:false });
+
+            argazki_collection.on("sync", function(collection){
+                console.log(collection);
+                argazki_view = new ArgazkiakCollectionView({ collection: collection });
+            });
+            
+            
+
+            /*
             argazki_collection.fetch({
-                reset: true,                
+                //reset: true,                
                 success: function(){
-                    argazki_collection.initialize();
-                    argazki_view = new ArgazkiakView({ model: argazki_collection.getElement() });
-                    App.mainRegion.show(argazki_view);
+                    console.log(argazki_collection);
+                    //argazki_collection.initialize();
+                    //argazki_view = new ArgazkiakView({ model: argazki_collection.getElement() });
+                    //App.mainRegion.show(argazki_view);
                 },
                 error: function(){
                     alert("Errorea argazkien informazioa kargatzerakoan");
                 }
             });
+            /*
             this.argazki_carousel = setInterval(function(){
                 argazki_view.hide();
                 this.effectTimeout = setTimeout(function(){
@@ -80,7 +91,7 @@ define(['js/app', 'backbone', 'marionette', 'js/views/Menua/MenuaModel', 'js/vie
                     App.mainRegion.show(argazki_view);
                 },800);
             },20000);
-
+            */
         },
 
         erosketak: function(){

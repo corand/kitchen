@@ -12,7 +12,7 @@ define( [ 'js/app', 'marionette', 'handlebars','jqueryuitouch', 'text!js/views/E
 
             onDomRefresh: function(){
                 $(".produktu").draggable();
-                $( "#otzara" ).droppable({
+                $( "#ontzia" ).droppable({
                     drop: function( event, ui ) {
                         $( this )
                             .addClass( "ui-state-highlight" );

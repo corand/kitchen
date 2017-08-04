@@ -101,10 +101,22 @@ class egutegia:
         #2016-02-04T19:00:00+01:00
         json_list = []
         for event in events:
-            event_start = dateutil.parser.parse(event["start"]["dateTime"]).isoformat()
-            event_end = dateutil.parser.parse(event["end"]["dateTime"]).isoformat()
-            json_entry = {'start':event_start,'end':event_end, 'allDay':False, 'title': event["summary"]}
-            json_list.append(json_entry)
+            print '**'
+            print event["summary"]
+            print event["start"]
+            print event["end"]
+            print '**'
+            if "dateTime" in event["start"]:
+                event_start = dateutil.parser.parse(event["start"]["dateTime"]).isoformat()
+                event_end = dateutil.parser.parse(event["end"]["dateTime"]).isoformat()
+                json_entry = {'start':event_start,'end':event_end, 'allDay':False, 'title': event["summary"]}
+                json_list.append(json_entry)
+            else:
+                if "date" in event["start"]:
+                    event_start = dateutil.parser.parse(event["start"]["date"]).isoformat()
+                    event_end = dateutil.parser.parse(event["end"]["date"]).isoformat()
+                    json_entry = {'start':event_start,'end':event_end, 'allDay':True, 'title': event["summary"]}
+                    json_list.append(json_entry)
 
         return json.dumps(json_list)
 
